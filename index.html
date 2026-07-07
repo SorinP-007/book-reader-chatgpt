@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Book Reader ChatGPT</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="panel">
+        <div class="intro">
+          <p class="eyebrow">ChatGPT pentru carti</p>
+          <h1>Transforma o carte intr-un rezumat memorabil.</h1>
+        </div>
+
+        <form id="bookForm" class="form">
+          <label>
+            <span>Cartea</span>
+            <input id="book" name="book" type="text" placeholder="Ex: Atomic Habits" autocomplete="off" required />
+          </label>
+
+          <label>
+            <span>Autorul</span>
+            <input id="author" name="author" type="text" placeholder="Ex: James Clear" autocomplete="off" />
+          </label>
+
+          <details class="settings">
+            <summary>Setari OpenAI</summary>
+            <label>
+              <span>Cheie API</span>
+              <input id="apiKey" name="apiKey" type="password" placeholder="sk-..." autocomplete="off" />
+            </label>
+            <p>Pe GitHub Pages, cheia este folosita doar in browserul tau. Pentru folosire publica, varianta cu server este mai sigura.</p>
+          </details>
+
+          <button id="submitButton" type="submit">
+            <span class="buttonText">Genereaza raspunsul</span>
+            <span class="spinner" aria-hidden="true"></span>
+          </button>
+        </form>
+      </section>
+
+      <section class="resultPanel" aria-live="polite">
+        <div class="resultHeader">
+          <h2>Raspuns</h2>
+          <button id="copyButton" class="copyButton" type="button">Copiaza</button>
+        </div>
+        <div id="result" class="result empty">Completeaza cartea si apasa butonul.</div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
